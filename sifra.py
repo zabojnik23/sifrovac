@@ -1,14 +1,20 @@
-def zasifruj(text, posun):
-    # TODO (A): posuň každé písmeno o 'posun' míst dopředu
-    return text
+def desifruj(zasifrovana_zprava, posun, abeceda):
+    desifrovana_zprava = ""
+    for j in range(len(zasifrovana_zprava)):
+        znak = zasifrovana_zprava[j]
 
+        if znak == " ":
+            desifrovana_zprava += " "
+        else:
+            puvodni_index = abeceda.index(znak)
+            novy_index = (puvodni_index - posun) % len(abeceda)
+            desifrovana_zprava += abeceda[novy_index]
 
-def desifruj(text, posun):
-    # TODO (B): posuň každé písmeno o 'posun' míst dozadu
-    return text
+    return desifrovana_zprava
 
-
-zprava = "ahoj svete"
-tajne = zasifruj(zprava, 3)
-print("Zasifrovano:", tajne)
-print("Desifrovano:", desifruj(tajne, 3))
+zasifrovana_zprava = "dkrm vyhwh"
+abeceda = "abcdefghijklmnopqrstuvwxyz"
+#zprava = "ahoj svete"
+#tajne = zasifruj(zprava, 3, abeceda)
+#print("Zasifrovano:", tajne)
+print("Desifrovano:", desifruj(zasifrovana_zprava, 3, abeceda))
