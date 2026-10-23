@@ -1,7 +1,6 @@
 def zasifruj(text, posun):
-    # TODO (A): posuň každé písmeno o 'posun' míst dopředu
-    return text
-
+    abeceda="abcdefghijklmnopqrstuvwxyz"
+    
 
 def desifruj(text, posun):
     # TODO (B): posuň každé písmeno o 'posun' míst dozadu
